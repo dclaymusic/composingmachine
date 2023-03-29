@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="text.js"></script>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="widthdevice=width">
+        <title>THE COMPOSING MACHINE</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript">
+            window.onload = (event) => { resizeImages(); };
+        </script>
+    </head>
+    <body>
+        <header id="header">
+            <h1 id="title">The Composing Machine</h1>
+        </header>
+        <main id="main">
+            <div id="soundbanks">
+                <p id="seltext">Select Mode:</p>
+                <img id="bank2" src="img/menu-r.png" onclick='toggleSelect(2)'>
+                <img id="bank1" src="img/menu-t.png" onclick='toggleSelect(1)'>
+                <img id="bank3" src="img/menu-s.png" onclick='toggleSelect(3)'>
+            </div>
+            <div id="bankchoices">
+                <p id="seltext">Select Sounds:</p>
+                <div id= "bank1choices">
+                    <img id="tc-labeled" src="img/tc-labeled.png" onclick='addSoundToBank(`tc`)'>
+                    <img id="td-labeled" src="img/td-labeled.png" onclick='addSoundToBank(`td`)'>
+                    <img id="te-labeled" src="img/te-labeled.png" onclick='addSoundToBank(`te`)'>
+                    <img id="tf-labeled" src="img/tf-labeled.png" onclick='addSoundToBank(`tf`)'>
+                    <img id="tf-sharp-labeled" src="img/tf-sharp-labeled.png" onclick='addSoundToBank(`tf-sharp`)'>
+                    <img id="tg-labeled" src="img/tg-labeled.png" onclick='addSoundToBank(`tg`)'>
+                    <img id="ta-labeled" src="img/ta-labeled.png" onclick='addSoundToBank(`ta`)'>
+                    <img id="tb-flat-labeled" src="img/tb-flat-labeled.png" onclick='addSoundToBank(`tb-flat`)'>
+                    <img id="tb-labeled" src="img/tb-labeled.png" onclick='addSoundToBank(`tb`)'>
+                    <img id="tc-hi-labeled" src="img/tc-hi-labeled.png" onclick='addSoundToBank(`tc-hi`)'>
+                    <img id="td-hi-labeled" src="img/td-hi-labeled.png" onclick='addSoundToBank(`td-hi`)'>
+                    <img id="te-hi-labeled" src="img/te-hi-labeled.png" onclick='addSoundToBank(`te-hi`)'>
+                    <img id="tf-hi-labeled" src="img/tf-hi-labeled.png" onclick='addSoundToBank(`tf-hi`)'>
+                    <img id="tg-hi-labeled" src="img/tg-hi-labeled.png" onclick='addSoundToBank(`tg-hi`)'>
+                </div>
+                <div id= "bank2choices">
+                    <!-- <img id="rh" class='twobeats' src="img/rh.png" onclick='addSoundToBank(`rh`)'> -->
+                    <img id="rq" src="img/rq.png" onclick='addSoundToBank(`rq`)'>
+                    <img id="r8" src="img/r8.png" onclick='addSoundToBank(`r8`)'>
+                    <!-- <img id="r8q8" class='twobeats' src="img/r8q8.png" onclick='addSoundToBank(`r8q8`)'> -->
+                    <img id="r16" src="img/r16.png" onclick='addSoundToBank(`r16`)'>
+                    <!-- <img id="r81" src="img/r81.png" onclick='addSoundToBank(`r81`)'> -->
+                    <img id="r82" src="img/r82.png" onclick='addSoundToBank(`r82`)'>
+                    <img id="r16168" src="img/r16168.png" onclick='addSoundToBank(`r16168`)'>
+                    <!-- <img id="r16816" src="img/r16816.png" onclick='addSoundToBank(`r16816`)'> -->
+                    <img id="r81616" src="img/r81616.png" onclick='addSoundToBank(`r81616`)'>
+                    <img id="rd16" src="img/rd16.png" onclick='addSoundToBank(`rd16`)'>
+                    <!-- <img id="rdq8" class='twobeats' src="img/rdq8.png" onclick='addSoundToBank(`rdq8`)'> -->
+                </div>
+                <div id= "bank3choices">
+                    <img id="sdo" src="img/sdo.png" onclick='addSoundToBank(`sdo`)'>
+                    <img id="sre" src="img/sre.png" onclick='addSoundToBank(`sre`)'>
+                    <img id="smi" src="img/smi.png" onclick='addSoundToBank(`smi`)'>
+                    <img id="sfa" src="img/sfa.png" onclick='addSoundToBank(`sfa`)'>
+                    <img id="ssol" src="img/ssol.png" onclick='addSoundToBank(`ssol`)'>
+                    <img id="sla" src="img/sla.png" onclick='addSoundToBank(`sla`)'>
+                    <img id="sti" src="img/sti.png" onclick='addSoundToBank(`sti`)'>
+                    <img id="sdo-hi" src="img/sdo-hi.png" onclick='addSoundToBank(`sdo-hi`)'>
+                </div>
+            </div>
+            <div id="line1" class="song"></div>
+            <div id="line2" class="song"></div>
+        </main>
+        <footer id="footer">
+            <div id="footerdiv1">
+                <button id="restart" onclick="toOpeningScreen()">Home</button>
+                <button id="play" onclick="togglePlay()">Play</button>
+                <button id="go">(None Selected)</button>
+            </div>
+            <div id="tempocontainer">
+                <input type="range" min="30" max="180" value="60" class="slider" id="tempo" oninput="setTempo()">
+                <output id="output">60 BPM</output>
+            </div>
+            <p id="credit">Beta Version 1.0 - by Danny Clay</p>
+        </footer>
+    </body>
+</html>
